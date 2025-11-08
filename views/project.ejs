@@ -1,0 +1,13 @@
+<!doctype html><html><head>
+    <meta charset="utf-8"><title><%= project.title %></title>
+    <link rel="stylesheet" href="/css/main.css">
+  </head><body>
+    <h1><%= project.title %></h1>
+    <p><strong>Sector:</strong> <%= project.sector %></p>
+    <p><%= project.summary_short || project.summary || '' %></p>
+    <% if (project.original_source_url) { %>
+      <p><a target="_blank" href="<%= project.original_source_url %>">Source</a></p>
+    <% } %>
+    <p><a href="/solutions/projects">Back to list</a></p>
+  </body></html>
+  

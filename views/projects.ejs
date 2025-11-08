@@ -1,0 +1,16 @@
+<!doctype html><html><head>
+    <meta charset="utf-8"><title>Projects</title>
+    <link rel="stylesheet" href="/css/main.css">
+  </head><body>
+    <h1>Projects</h1>
+    <table><thead><tr><th>Title</th><th>Sector</th><th></th></tr></thead><tbody>
+    <% projects.forEach(p => { %>
+      <tr>
+        <td><%= p.title %></td>
+        <td><%= p.sector %></td>
+        <td><a href="/solutions/projects/<%= p.id %>">Details</a></td>
+      </tr>
+    <% }) %>
+    </tbody></table>
+  </body></html>
+  
