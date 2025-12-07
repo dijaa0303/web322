@@ -1,0 +1,43 @@
+<nav>
+  <div class="container">
+    <!-- Left: Site title / logo -->
+    <div class="brand">
+      <a href="/">Climate Solutions</a>
+    </div>
+
+    <!-- Right: main links + sectors -->
+    <ul>
+      <% if (!session.user) { %>
+        <li>
+          <a href="/login">Log In</a>
+        </li>
+      <% } else { %>
+        <li>
+          <a href="/logout">Log Out (<%= session.user.userName %>)</a>
+        </li>
+      <% } %>
+
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
+
+      <!-- Sectors list -->
+      <li>
+        <span><strong>Sectors:</strong></span>
+        <ul>
+          <li><a href="/solutions/projects?sector=Land%20Sinks">Land Sinks</a></li>
+          <li><a href="/solutions/projects?sector=Industry">Industry</a></li>
+          <li><a href="/solutions/projects?sector=Transportation">Transportation</a></li>
+          <li><a href="/solutions/projects?sector=Electricity">Electricity</a></li>
+          <li><a href="/solutions/projects?sector=Food,%20Agriculture,%20and%20Land%20Use">Food, Agriculture, and Land Use</a></li>
+          <li>
+            <a href="/solutions/projects">View All</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

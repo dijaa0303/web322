@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+    <main class="container">
+    <h1>Login</h1>
+
+    <form action="/login" method="POST">
+      <p>
+        <label>User Name:</label><br>
+        <input
+          type="text"
+          name="userName"
+          placeholder="User Name"
+          value="<%= userName %>"
+          required
+        >
+      </p>
+
+      <p>
+        <label>Password:</label><br>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        >
+      </p>
+
+      <p>
+        <button type="submit">Login</button>
+      </p>
+    </form>
+
+    <% if (errorMessage) { %>
+      <div role="alert" class="alert alert-error">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span><%= errorMessage %></span>
+      </div>
+    <% } %>
+  </body>
+</html>

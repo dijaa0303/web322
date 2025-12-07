@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add Project</title>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <main class="container">
+    <h1>Add Project</h1>
+
+    <% if (message) { %>
+      <p style="color: red;"><%= message %></p>
+    <% } %>
+
+    <form action="/solutions/addProject" method="POST">
+      <p>
+        <label>Title:</label><br>
+        <input type="text" name="title" required>
+      </p>
+
+      <p>
+        <label>Feature Image URL:</label><br>
+        <input type="url" name="feature_img_url" required>
+      </p>
+
+      <p>
+        <label>Sector:</label><br>
+        <select name="sector_id" required>
+          <option value="1">Land Sinks</option>
+          <option value="2">Industry</option>
+          <option value="3">Transportation</option>
+          <option value="4">Electricity</option>
+          <option value="5">Food, Agriculture, and Land Use</option>
+        </select>
+      </p>
+
+      <p>
+        <label>Short Intro:</label><br>
+        <textarea name="intro_short" rows="3" required></textarea>
+      </p>
+
+      <p>
+        <label>Short Summary:</label><br>
+        <textarea name="summary_short" rows="4" required></textarea>
+      </p>
+
+      <p>
+        <label>Impact:</label><br>
+        <textarea name="impact" rows="4" required></textarea>
+      </p>
+
+      <p>
+        <label>Original Source URL:</label><br>
+        <input type="url" name="original_source_url" required>
+      </p>
+
+      <p>
+        <button type="submit">Add Project</button>
+      </p>
+    </form>
+
+    <p><a href="/solutions/projects">Back to Projects</a></p>
+  </main>
+  </body>
+</html>

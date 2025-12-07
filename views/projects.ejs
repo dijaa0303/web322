@@ -2,15 +2,32 @@
     <meta charset="utf-8"><title>Projects</title>
     <link rel="stylesheet" href="/css/main.css">
   </head><body>
+    <%- include('partials/navbar') %>
+    <main class="container">
     <h1>Projects</h1>
-    <table><thead><tr><th>Title</th><th>Sector</th><th></th></tr></thead><tbody>
+    <% if (session.user) { %>
+      <p>
+        <a href="/solutions/addProject" class="btn btn-success">Add New Project</a>
+      </p>
+    <% } %> 
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Sector</th>
+          <th>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
     <% projects.forEach(p => { %>
       <tr>
         <td><%= p.title %></td>
-        <td><%= p.sector %></td>
+        <td><%= p.Sector.sector_name %></td>
         <td><a href="/solutions/projects/<%= p.id %>">Details</a></td>
       </tr>
     <% }) %>
     </tbody></table>
+    </main>
   </body></html>
   
